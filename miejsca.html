@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kino</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="navigation">
+      <h1>Kino</h1>
+      <ul>
+        <li class="active">Wybór miejsc</li>
+        <li>
+          <input
+            type="button"
+            value="Zatwierdź wybrane miejsca"
+            onmousemove="zliczanieMiejsc()"
+            class="czyZaznaczonoMiejsca"
+          />
+        </li>
+      </ul>
+    </div>
+    <div class="popupBox1">
+      <h1>Szczegóły</h1>
+      <div class="szczegoly">
+        <section class="dol">
+          <h2>Parter</h2>
+          <form action="script.js" name="biletyDol">
+            <p id="zliczParter"></p>
+            <p class="wybor">
+              Podaj ilość biletów ulgowych:
+              <input type="number" name="biletyUlgoweParter" value="0" />
+            </p>
+            <br />
+            <p class="przypisy"><i>*Cena biletu ulgowego: 10zł</i></p>
+            <p class="przypisy"><i>*Cena biletu normalnego: 15zł</i></p>
+          </form>
+        </section>
+        <hr />
+        <section class="gora">
+          <h2>Piętro</h2>
+          <form action="script.js" name="biletyGora">
+            <p id="zliczPietro"></p>
+            <p class="wybor">
+              Podaj ilość biletów ulgowych:
+              <input type="number" name="biletyUlgowePietro" value="0" />
+            </p>
+            <br />
+            <p class="przypisy"><i>*Cena biletu ulgowego: 20zł</i></p>
+            <p class="przypisy"><i>*Cena biletu normalnego: 25zł</i></p>
+          </form>
+        </section>
+      </div>
+      <div class="btns">
+        <a href="#" class="btn1">Anuluj</a>
+        <a href="#" class="btn2">Zatwierdź</a>
+      </div>
+    </div>
+    <div class="popupBox2">
+      <h1>Podsumowanie</h1>
+      <div class="szczegoly">
+        <section class="dol">
+          <h2>Parter</h2>
+          <p id="biletyUlgoweParter"></p>
+          <p id="biletyNormalneParter"></p>
+        </section>
+        <hr />
+        <section class="gora">
+          <h2>Piętro</h2>
+          <p id="biletyUlgowePietro"></p>
+          <p id="biletyNormalnePietro"></p>
+        </section>
+      </div>
+      <h3 id="cena"></h3>
+      <div class="btns">
+        <a href="#" class="btn3">Anuluj</a>
+        <a href="#" class="btn4">Zarezerwuj</a>
+      </div>
+    </div>
+    <div class="popupBoxError">
+      <h1>Błąd</h1>
+      <p id="error"></p>
+      <div class="btns">
+        <a href="#" class="btnError">Okey</a>
+      </div>
+    </div>
+    <div class="sala">
+      <div class="pietro">
+        <h3>Miejsca na parterze</h3>
+        <form action="script.js" name="miejscaParter">
+          <ul>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkParter" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+          </ul>
+        </form>
+      </div>
+      <div class="pietro">
+        <h3>Miejsca na piętrze</h3>
+        <form action="script.js" name="miejscaPietro">
+          <ul>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="checkPietro" />
+                <div class="icon-box">
+                  <i class="fa fa-check"></i>
+                </div>
+              </label>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

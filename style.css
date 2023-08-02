@@ -1,0 +1,386 @@
+:root {
+  --color-bg: #1f1b24;
+  --color-nav: #121212;
+  --color-title: #fff;
+  --color-menu: #999999;
+  --color-active: #bb86fc;
+  --color-box: #2f263a;
+  --color-checkbox: #272030;
+  --color-przypisy: #624c7e;
+  --color-btn1: #999999;
+  --color-btn2: #cc0000;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+}
+
+/* INDEX.HTML */
+.navigation {
+  background-color: var(--color-nav);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 50px;
+}
+h1 {
+  color: var(--color-title);
+}
+ul li {
+  display: inline-block;
+  margin: 0 30px;
+  list-style: none;
+  color: var(--color-menu);
+  font-size: 20px;
+}
+ul li.active {
+  color: var(--color-active);
+  font-weight: bold;
+}
+ul li input {
+  cursor: pointer;
+  font-size: 20px;
+  background-color: var(--color-nav);
+  border: 2px solid var(--color-active);
+  padding: 10px;
+  border-radius: 15px;
+  color: var(--color-menu);
+  transition-duration: 1s;
+}
+ul li input:hover {
+  color: var(--color-title);
+  background-color: var(--color-active);
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.box {
+  margin-top: 100px;
+  height: 600px;
+  width: 350px;
+  background-color: var(--color-box);
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  transition-duration: 1s;
+}
+.box:hover {
+  box-shadow: 0 0 10px rgba(123, 27, 187, 0.5), 0 0 20px rgba(123, 27, 187, 0.5),
+    0 0 30px rgba(123, 27, 187, 0.5);
+}
+.box img {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  filter: grayscale(1);
+  transition-duration: 1s;
+}
+.box:hover img {
+  filter: grayscale(0);
+}
+.box h2 {
+  color: var(--color-title);
+  margin: 20px 20px 5px 15px;
+  font-size: 25px;
+}
+.box hr {
+  border: 1px solid var(--color-active);
+  width: 60%;
+  margin-left: 10px;
+}
+.box p {
+  color: var(--color-menu);
+  margin: 20px;
+}
+.box form {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+.box form input {
+  width: 90px;
+  height: 45px;
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--color-menu);
+  background-color: var(--color-bg);
+  border-radius: 10px;
+  border: 0px;
+  transition-duration: 1s;
+}
+.box form input:hover {
+  background-color: var(--color-active);
+  color: var(--color-title);
+}
+
+/* MIEJSCA.HTML */
+
+.sala {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  filter: blur(0px);
+}
+.pietro {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 700px;
+  height: 700px;
+  background-color: var(--color-box);
+  margin-top: 60px;
+  border-radius: 15px;
+}
+.pietro:hover {
+  filter: blur(0px);
+}
+.pietro h3 {
+  margin-top: 45px;
+  color: var(--color-active);
+  font-size: 25px;
+}
+ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 45px;
+  box-sizing: border-box;
+}
+ul::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -50%;
+  pointer-events: none;
+  z-index: 1;
+}
+ul li {
+  position: relative;
+  list-style: none;
+  text-align: center;
+  margin: 15px;
+}
+ul li label {
+  position: relative;
+}
+ul li label input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+ul li label .icon-box {
+  width: 50px;
+  height: 50px;
+  background: var(--color-checkbox);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid var(--color-bg);
+  border-radius: 10px;
+}
+ul li label .icon-box .fa {
+  font-size: 25px;
+  display: none;
+}
+ul li label input[type="checkbox"]:checked ~ .icon-box {
+  background: var(--color-bg);
+  border: 3px solid var(--color-title);
+  box-shadow: 0 0 10px rgba(123, 27, 187, 0.5), 0 0 20px rgba(123, 27, 187, 0.5),
+    0 0 30px rgba(123, 27, 187, 0.5), inset 0 0 10px rgb(123, 27, 187);
+}
+ul li label input[type="checkbox"]:checked ~ .icon-box .fa {
+  display: initial;
+  color: var(--color-title);
+  text-shadow: 0 0 10px rgba(123, 27, 187, 0.1),
+    0 0 20px rgba(123, 27, 187, 0.5);
+  display: initial;
+}
+.popupBox1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 15px;
+  width: 800px;
+  height: 500px;
+  background: var(--color-bg);
+  padding: 40px;
+  z-index: 10;
+  filter: blur(0px);
+  display: none;
+}
+.popupBox1 h1 {
+  font-size: 35px;
+  color: var(--color-active);
+  font-weight: bolder;
+  margin: 20px 0 20px;
+}
+.szczegoly {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+}
+.szczegoly section {
+  width: 100%;
+}
+.szczegoly h2 {
+  color: var(--color-title);
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+#zliczParter,
+#zliczPietro {
+  color: var(--color-menu);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.wybor {
+  color: var(--color-menu);
+}
+.szczegoly p input {
+  width: 50px;
+  height: 25px;
+  font-size: 15px;
+  background-color: var(--color-box);
+  border: none;
+  color: var(--color-active);
+  text-align: center;
+}
+.szczegoly p input::-webkit-outer-spin-button,
+.szczegoly p input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.przypisy {
+  text-align: left;
+  margin: 0 20px 10px;
+  color: var(--color-przypisy);
+}
+.szczegoly hr {
+  border: 2px solid var(--color-box);
+  height: 250px;
+}
+.btns {
+  margin: 40px 0 0 0;
+}
+.btn1,
+.btn3,
+.btnError {
+  background: var(--color-btn1);
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 10px 13px;
+  text-decoration: none;
+  transition-duration: 0.8s;
+}
+.btn2,
+.btn4,
+.btnError {
+  margin-left: 20px;
+  background: var(--color-btn2);
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 10px 13px;
+  text-decoration: none;
+  transition-duration: 0.8s;
+}
+.btnError {
+  background: var(--color-btn2);
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition-duration: 0.8s;
+  margin: 0;
+}
+.btn1:hover,
+.btn3:hover {
+  box-shadow: 0 0 10px rgba(153, 153, 153, 0.5),
+    0 0 20px rgba(153, 153, 153, 0.5), 0 0 30px rgba(153, 153, 153, 0.5);
+}
+.btn2:hover,
+.btn4:hover,
+.btnError:hover {
+  box-shadow: 0 0 10px rgb(204, 0, 0, 0.5), 0 0 20px rgb(204, 0, 0, 0.5),
+    0 0 30px rgb(204, 0, 0, 0.5);
+}
+.popupBoxError {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+  width: 400px;
+  height: 300px;
+  background: var(--color-nav);
+  padding: 40px;
+  z-index: 10;
+  display: none;
+}
+.popupBoxError h1 {
+  color: var(--color-active);
+  font-weight: bolder;
+  font-size: 35px;
+  margin: 40px;
+}
+.popupBoxError p {
+  color: var(--color-menu);
+  font-weight: bold;
+  font-size: 20px;
+  margin: 30px;
+}
+.popupBox2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 15px;
+  width: 800px;
+  height: 500px;
+  background: var(--color-bg);
+  padding: 40px;
+  z-index: 10;
+  filter: blur(0px);
+  display: none;
+}
+.popupBox2 h1 {
+  color: var(--color-active);
+  font-weight: bolder;
+  font-size: 35px;
+  margin: 20px;
+}
+#biletyUlgoweParter,
+#biletyNormalneParter,
+#biletyUlgowePietro,
+#biletyNormalnePietro {
+  color: var(--color-menu);
+  font-weight: bolder;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+#cena {
+  color: var(--color-active);
+  font-size: 20px;
+}
